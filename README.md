@@ -2,6 +2,14 @@
 
 This repository showcases an end-to-end data engineering pipeline built entirely within **Microsoft Fabric**. The project implements a robust **Medallion Architecture** (Bronze, Silver, Gold) to ingest, extract, cleanse, and transform music metadata using PySpark and Fabric Data Pipelines.
 
+## 🎯 Business Problem & Project Objective
+The core requirement of this project was to organize a massive, unstructured collection of song lyrics. The source files were raw PDFs containing only the lyrics—lacking any metadata, categorization, or indexing. 
+
+To solve this, the pipeline was built to:
+1. **Ingest Metadata:** Read external CSV files containing the categorizations, scales, and singer details for the raw lyric pages.
+2. **Transform & Model:** Cleanse and map this data using PySpark, storing it in a query-optimized Star Schema (Gold Layer).
+3. **Automate Book Generation:** Programmatically stitch the raw PDF pages together based on user-selected categories and dynamically generate a custom, hyperlinked Table of Contents (Index) that instantly navigates to the correct lyric page.
+   
 ## 🏗️ Architecture & Storage (Lakehouse)
 The data is stored and processed in a Fabric Lakehouse, structured into distinct layers to ensure data quality and optimized reporting.
 
